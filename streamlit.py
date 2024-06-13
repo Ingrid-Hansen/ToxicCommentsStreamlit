@@ -53,7 +53,7 @@ with EDA:
 
     with st.expander("Cleaning the dataset", expanded=False):
         st.write('These are the first 7 lines in the original dataset:')
-        data = pd.read_csv("NLPStreamlit/train.csv")
+        data = pd.read_csv("./train.csv")
         st.write(data.head(7))
         st.write("As you can see there are multiple columns that specify what type of toxic comment it is. We decided that we will make one column which will specify if a comment is toxic or not, and no longer want to have multiple labels for that. We also dropped the 'id' column since we don't really need that.")
         df_toxic = data.copy()

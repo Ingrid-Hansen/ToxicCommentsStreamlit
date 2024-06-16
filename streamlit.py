@@ -20,7 +20,8 @@ local_filename = 'model/pytorch_model.bin'
 def download_file(url, local_filename):
     # Send a HTTP request to the URL
     if os.path.exists(local_filename):
-        print(f"File already exists: {local_filename}")
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        print(f"{timestamp}: File already exists: {local_filename}")
         return
     with requests.get(url, stream=True) as r:
         # Check if the request was successful
